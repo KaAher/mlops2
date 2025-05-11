@@ -10,8 +10,8 @@ import os
 # Twilio API Credentials
 ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
 AUTH_TOKEN  = os.getenv("TWILIO_AUTH_TOKEN")
-TWILIO_PHONE_NUMBER = "+19207648860"
-EMERGENCY_CONTACT = "+917767040262" 
+TWILIO_PHONE_NUMBER = os.getenv("TWILIO_PHONE_NUMBER")
+EMERGENCY_CONTACT =os.getenv("EMERGENCY_CONTACT")
 
 # Load trained model
 model = load_model("C:\\Users\\Lenovo\\Desktop\\mlops_pro\\models\\trained.h5")
