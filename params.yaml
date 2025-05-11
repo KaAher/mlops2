@@ -1,0 +1,50 @@
+
+base:
+  project: Deep_Learning
+
+raw_data:
+  data_src: data/raw
+
+load_data:
+  num_classes: 2
+  raw_data: data/raw
+  preprocessed_data: data/processed
+  full_path: mlops_pro/data
+
+train:
+  split_ratio: 0.80
+
+model:
+  name: 
+  trainable: True
+  train_path: data/processed/train
+  test_path: data/processed/test
+  val_path: data/processed/val
+  image_size: [255,255]
+  loss: 'binary_crossentropy'
+  optimizer: 'adam'
+  metrics: 'accuracy'
+  epochs: 50
+  activationone: 'relu'
+  activationtwo: 'sigmoid'
+  final_neuron: 1
+  #batch_size: 32
+  sav_dir: models/trained.h5
+
+img_augment:
+  rescale: 0.00392156862745098
+  shear_range: 0.2
+  zoom_range: 0.2
+  horizontal_flip: True
+  vertical_flip: True
+  batch_size: 32
+  class_mode: 'binary'
+
+model_dir: models
+
+mlflow_config:
+  artifact_dir: artifacts
+  experiment_name: Deep_Learning_VGG19
+  run_name: mlops
+  registered_model_name: Deep_Learning_model
+  remote_server_uri: http://127.0.0.1:5000

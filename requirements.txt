@@ -1,0 +1,16 @@
+numpy
+pandas
+tensorflow
+streamlit
+pathlib
+joblib
+keras
+PyYAML
+opencv-python-headless
+dvc
+seaborn
+matplotlib
+mlflow
+h5py
+scikit-learn
+twilio

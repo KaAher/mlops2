@@ -1,0 +1,6 @@
+,precision,recall,f1-score,support
+Accident,0.47,1.0,0.6394557823129252,47
+Non Accident,0.0,0.0,0.0,53
+accuracy,0.47,0.47,0.47,0
+macro avg,0.235,0.5,0.3197278911564626,100
+weighted avg,0.22089999999999999,0.47,0.30054421768707484,100
