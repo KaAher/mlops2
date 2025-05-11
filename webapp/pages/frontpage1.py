@@ -8,11 +8,11 @@ from twilio.rest import Client
 import os 
 # Twilio API Credentials
 
-
-ACCOUNT_SID = "AC8a692691f023a314c1d048f257af8d18"
-AUTH_TOKEN = "56146f56177384ff3ca2c598aa5e8503"
+ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
+AUTH_TOKEN  = os.getenv("TWILIO_AUTH_TOKEN")
 TWILIO_PHONE_NUMBER = "+19207648860"
 EMERGENCY_CONTACT = "+917767040262" 
+
 
 # Load trained model
 
