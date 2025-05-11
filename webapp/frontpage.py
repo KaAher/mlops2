@@ -14,7 +14,7 @@ TWILIO_PHONE_NUMBER = os.getenv("TWILIO_PHONE_NUMBER")
 EMERGENCY_CONTACT =os.getenv("EMERGENCY_CONTACT")
 
 # Load trained model
-model = load_model("C:\\Users\\Lenovo\\Desktop\\mlops_pro\\models\\trained.h5")
+model = load_model("models/trained.h5")
 
 # Streamlit UI Styling
 st.set_page_config(page_title="Accident Detection System", page_icon="🚨", layout="wide")
