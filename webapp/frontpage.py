@@ -21,28 +21,57 @@ st.set_page_config(page_title="Accident Detection System", page_icon="🚨", lay
 st.markdown("""
     <style>
         .main-title {
-            font-size: 36px;
+            font-size: 100px;
             font-weight: bold;
             text-align: center;
             color: #FF4B4B;
         }
+
         .sub-title {
-            font-size: 20px;
+            font-size: 30px;
             text-align: center;
             color: #4A90E2;
         }
+
         .sidebar .sidebar-content {
-            background-color: #f0f2f6;
+            background-color: #FFD1DC !important;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        p {
+            font-size: 60px;
+        }
+
+        body {
+            background-color: #FFF3E0;
+        }
+
+        .main {
+            background-color: #FFF3E0 !important;
+        }
+
+        .stApp {
+            background-color: #FFF3E0;
+        }
+
+        /* Make prediction output text black */
+        .stAlert > div {
+            color: black !important;
+            font-weight: bold;
         }
     </style>
 """, unsafe_allow_html=True)
 
+
+
 # Sidebar
 st.sidebar.title("Navigation")
-app_mode = st.sidebar.radio("Choose Mode", ["Upload Image", "Live Camera", "CCTV Feed"])
+app_mode = st.sidebar.radio("Choose Mode", ["Upload Image",  "CCTV Feed"])
+st.markdown('<p style="font-size:50px; font-weight:bold; text-align:center; color:#FF4B4B;">Accident Detection System 🚨</p>', unsafe_allow_html=True)
 
-st.markdown('<p class="main-title">Accident Detection System 🚨</p>', unsafe_allow_html=True)
-st.markdown('<p class="sub-title">Using AI for real-time accident detection</p>', unsafe_allow_html=True)
+st.markdown('<p style="font-size:30px; text-align:center; color:#4A90E2; font-weight:600;">Using Deep learning for real-time accident detection</p>', unsafe_allow_html=True)
+
 
 # Upload Image Mode
 if app_mode == "Upload Image":
@@ -62,32 +91,7 @@ if app_mode == "Upload Image":
         else:
             st.success("✅ No Accident Detected")
 
-# Live Camera Mode
-elif app_mode == "Live Camera":
-    st.title("📹 Live Camera Stream")
-    run = st.checkbox("Start Live Camera")
-    
-    if run:
-        cap = cv2.VideoCapture(0)
-        stframe = st.empty()
 
-        while True:
-            ret, frame = cap.read()
-            if not ret:
-                st.error("Failed to capture video")
-                break
-            processed_frame = cv2.resize(frame, (255, 255)) / 255.0
-            processed_frame = np.expand_dims(processed_frame, axis=0)
-            prediction = model.predict(processed_frame)[0][0]
-            
-            label = "✅ No Accident" if prediction > 0.5 else "❌ Accident Detected"
-            color = (0, 255, 0) if prediction > 0.5 else (255, 0, 0)
-            cv2.putText(frame, label, (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)
-            stframe.image(frame, channels="BGR")
-
-        cap.release()
-    else:
-        st.warning("Live Camera Stopped")
 
 # CCTV Feed Mode
 elif app_mode == "CCTV Feed":
@@ -114,4 +118,4 @@ elif app_mode == "CCTV Feed":
 
         frame_window.image(frame)
     
-st.sidebar.write("Developed with ❤️ using Streamlit")
+st.sidebar.write("Developed with using Streamlit")
