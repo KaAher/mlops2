@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Accident Detection & Notification System
 An end-to-end MLOps project that detects road accidents using machine learning and automates real-time notifications. This system integrates model training, deployment, and monitoring within a robust CI/CD pipeline, ensuring rapid and reliable emergency response.
 
@@ -72,7 +72,4 @@ Project Organization
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 
 
---------
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
->>>>>>> d101793 (this is for before docker)
