@@ -1,11 +1,27 @@
 <<<<<<< HEAD
-# mlops_pro
-this is mlops project which uses mlflow,github,trivy,docker hub,docker desktop
-=======
-mlops_pro
-==============================
+# Accident Detection & Notification System
+An end-to-end MLOps project that detects road accidents using machine learning and automates real-time notifications. This system integrates model training, deployment, and monitoring within a robust CI/CD pipeline, ensuring rapid and reliable emergency response.
 
-A short description of the project.
+Tech Stack
+Machine Learning: Python, MLflow
+
+Containerization: Docker
+
+CI/CD & DevOps: GitHub Actions, Docker Hub
+
+Monitoring: MLflow Tracking, Custom Dashboards
+
+**Features** :
+
+Real-time accident detection using trained ML models
+
+Automated notifications to emergency services upon detection
+
+Continuous integration and deployment pipeline
+
+Containerized application for scalable deployment
+
+Monitoring and logging for model performance and system health
 
 Project Organization
 ------------
